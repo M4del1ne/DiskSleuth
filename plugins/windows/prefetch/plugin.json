@@ -1,0 +1,28 @@
+{
+  "id": "windows.prefetch",
+  "name": "Prefetch",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Parses Windows Prefetch files (*.pf, XP to Windows 11; compressed Windows 10+ files are decompressed with the Windows API): executable, run count, last run times, volume and referenced files.",
+  "entry": "main.py",
+  "requires": ["/Windows/Prefetch"],
+  "outputs": [
+    {
+      "id": "prefetch", "name": "Prefetch", "group": "Program Execution",
+      "columns": [
+        { "key": "executable", "title": "Executable", "width": 200 },
+        { "key": "runCount", "title": "Run Count", "width": 90 },
+        { "key": "lastRun", "title": "Last Run (UTC)", "width": 160, "kind": "time" },
+        { "key": "previousRuns", "title": "Previous Runs (UTC)", "width": 300 },
+        { "key": "path", "title": "Executable Path", "width": 360 },
+        { "key": "volume", "title": "Volume (Serial / Created)", "width": 240 },
+        { "key": "filesReferenced", "title": "Files Referenced", "width": 110 },
+        { "key": "hash", "title": "Prefetch Hash", "width": 110, "kind": "mono" },
+        { "key": "version", "title": "Format", "width": 80 },
+        { "key": "pfCreated", "title": "PF Created (UTC)", "width": 160, "kind": "time" },
+        { "key": "pfModified", "title": "PF Modified (UTC)", "width": 160, "kind": "time" },
+        { "key": "file", "title": "Prefetch File", "kind": "source" }
+      ]
+    }
+  ]
+}

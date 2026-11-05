@@ -1,0 +1,11 @@
+{
+  "name": "最近活动（注册表 MRU）",
+  "description": "各用户 NTUSER.DAT 中的最近使用列表：最近打开的文档（RecentDocs）、“运行”对话框命令（RunMRU）、资源管理器地址栏输入的路径和 IE 输入的网址、资源管理器搜索词（WordWheelQuery）。",
+  "outputs": {
+    "recentdocs": { "name": "最近打开的文档", "group": "用户痕迹", "columns": { "user": "用户", "order": "MRU 顺序", "name": "名称", "extension": "扩展名", "opened": "打开时间 (UTC，仅最近一项)", "source": "来源" } },
+    "runmru": { "name": "运行对话框记录", "group": "用户痕迹", "columns": { "user": "用户", "order": "MRU 顺序", "command": "命令", "lastUsed": "使用时间 (UTC，仅最近一项)", "source": "来源" } },
+    "typedpaths": { "name": "输入的路径与网址", "group": "用户痕迹", "columns": { "user": "用户", "kind": "类别", "order": "顺序", "value": "输入内容", "lastWrite": "键最后写入 (UTC)", "source": "来源" } },
+    "searchterms": { "name": "资源管理器搜索", "group": "用户痕迹", "columns": { "user": "用户", "order": "MRU 顺序", "term": "搜索词", "lastSearched": "搜索时间 (UTC，仅最近一项)", "source": "来源" } }
+  },
+  "values": { "Explorer address bar": "资源管理器地址栏", "Internet Explorer URL": "IE 地址栏" }
+}

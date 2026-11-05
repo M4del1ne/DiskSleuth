@@ -1,0 +1,4 @@
+# Python packages used by the bundled plugins (install into the project's .venv):
+#   .venv\Scripts\pip install -r plugins\requirements.txt
+regipy>=6.5
+LnkParse3>=1.5

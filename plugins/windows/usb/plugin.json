@@ -1,0 +1,45 @@
+{
+  "id": "windows.usb",
+  "name": "USB Devices",
+  "version": "1.1.1",
+  "api": 1,
+  "description": "USB storage devices (Enum\\USBSTOR) and all USB devices (Enum\\USB) from the SYSTEM hive, with drive letters and volume names from MountedDevices and Windows Portable Devices.",
+  "entry": "main.py",
+  "requires": ["/Windows/System32/config/SYSTEM"],
+  "dependencies": ["regipy"],
+  "outputs": [
+    {
+      "id": "usbstor", "name": "USB Storage", "group": "Devices",
+      "columns": [
+        { "key": "friendlyName", "title": "Device Name", "width": 240 },
+        { "key": "vendor", "title": "Vendor", "width": 110 },
+        { "key": "product", "title": "Product", "width": 160 },
+        { "key": "revision", "title": "Revision", "width": 80 },
+        { "key": "serial", "title": "Serial Number", "width": 200, "kind": "mono" },
+        { "key": "drive", "title": "Drive", "width": 70 },
+        { "key": "volumeName", "title": "Volume Name", "width": 140 },
+        { "key": "lastWrite", "title": "Key Last Write (UTC)", "width": 160, "kind": "time" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "usb", "name": "USB Device History", "group": "Devices",
+      "columns": [
+        { "key": "vidpid", "title": "VID / PID", "width": 170, "kind": "mono" },
+        { "key": "description", "title": "Description", "width": 240 },
+        { "key": "serial", "title": "Instance / Serial", "width": 220, "kind": "mono" },
+        { "key": "lastWrite", "title": "Key Last Write (UTC)", "width": 160, "kind": "time" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "mounted", "name": "Mounted Devices", "group": "Devices",
+      "columns": [
+        { "key": "name", "title": "Mount Point", "width": 220 },
+        { "key": "kind", "title": "Type", "width": 120 },
+        { "key": "detail", "title": "Device / Disk Signature", "width": 460, "kind": "mono" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

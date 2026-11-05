@@ -1,0 +1,39 @@
+{
+  "id": "browsers.history",
+  "name": "Browser History",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Visited pages and downloads from Chromium-based browsers (Chrome, Edge, Brave, Opera, 360, QQ Browser...) and Firefox, for every user profile. Databases are copied with their -wal / -journal files before reading.",
+  "entry": "main.py",
+  "requires": [],
+  "outputs": [
+    {
+      "id": "browser_history", "name": "Browser History", "group": "Browsers",
+      "columns": [
+        { "key": "time", "title": "Visited (UTC)", "width": 160, "kind": "time" },
+        { "key": "browser", "title": "Browser", "width": 110 },
+        { "key": "user", "title": "User", "width": 100 },
+        { "key": "title", "title": "Title", "width": 280 },
+        { "key": "url", "title": "URL", "width": 420 },
+        { "key": "visitCount", "title": "Visits", "width": 70 },
+        { "key": "transition", "title": "How", "width": 110 },
+        { "key": "profile", "title": "Profile", "width": 110 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "browser_downloads", "name": "Browser Downloads", "group": "Browsers",
+      "columns": [
+        { "key": "start", "title": "Started (UTC)", "width": 160, "kind": "time" },
+        { "key": "end", "title": "Finished (UTC)", "width": 160, "kind": "time" },
+        { "key": "browser", "title": "Browser", "width": 110 },
+        { "key": "user", "title": "User", "width": 100 },
+        { "key": "target", "title": "Saved To", "width": 360 },
+        { "key": "url", "title": "URL", "width": 380 },
+        { "key": "size", "title": "Size", "width": 90, "kind": "size" },
+        { "key": "state", "title": "State", "width": 100 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

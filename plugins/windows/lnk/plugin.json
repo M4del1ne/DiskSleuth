@@ -1,0 +1,29 @@
+{
+  "id": "windows.lnk",
+  "name": "Shortcut Files (LNK)",
+  "version": "1.1.1",
+  "api": 1,
+  "description": "Parses every .lnk file on the disk (deleted ones included): target path, arguments, target times and size, volume, and the machine that created the shortcut. Needs the file index.",
+  "entry": "main.py",
+  "requires": ["index"],
+  "dependencies": ["LnkParse3"],
+  "outputs": [
+    {
+      "id": "lnk", "name": "Shortcut Files (LNK)", "group": "User Activity",
+      "columns": [
+        { "key": "name", "title": "Shortcut", "width": 200 },
+        { "key": "target", "title": "Target Path", "width": 320 },
+        { "key": "args", "title": "Arguments", "width": 140 },
+        { "key": "targetModified", "title": "Target Modified (UTC)", "width": 160, "kind": "time" },
+        { "key": "targetCreated", "title": "Target Created (UTC)", "width": 160, "kind": "time" },
+        { "key": "targetAccessed", "title": "Target Accessed (UTC)", "width": 160, "kind": "time" },
+        { "key": "targetSize", "title": "Target Size", "width": 90, "kind": "size" },
+        { "key": "volume", "title": "Volume (Type / Serial / Label)", "width": 220 },
+        { "key": "machine", "title": "Machine ID", "width": 140 },
+        { "key": "lnkModified", "title": "LNK Modified (UTC)", "width": 160, "kind": "time" },
+        { "key": "deleted", "title": "Deleted", "width": 70 },
+        { "key": "path", "title": "LNK Location", "kind": "source" }
+      ]
+    }
+  ]
+}

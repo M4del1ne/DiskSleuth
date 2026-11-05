@@ -1,0 +1,9 @@
+{
+  "name": "网络配置",
+  "description": "从 SYSTEM 注册表提取网卡配置（IP、DHCP 租约、网关、DNS），从 SOFTWARE 注册表提取连接过的网络（无线/有线配置文件、首次与最后连接时间、网关 MAC）。",
+  "outputs": {
+    "netifaces": { "name": "网卡配置", "group": "网络", "columns": { "connection": "连接名称", "adapter": "网卡", "ip": "IP 地址", "mask": "子网掩码", "gateway": "网关", "dns": "DNS 服务器", "dhcpServer": "DHCP 服务器", "domain": "域", "leaseObtained": "租约获得 (UTC)", "leaseExpires": "租约到期 (UTC)", "lastWrite": "键最后写入 (UTC)", "guid": "接口 GUID", "source": "来源" } },
+    "netprofiles": { "name": "连接过的网络", "group": "网络", "columns": { "name": "网络名称", "type": "类型", "category": "网络类别", "firstConnected": "首次连接 (本地时间)", "lastConnected": "最后连接 (本地时间)", "gatewayMac": "网关 MAC", "dnsSuffix": "DNS 后缀", "description": "描述", "source": "来源" } }
+  },
+  "values": { "Yes": "是", "Wireless": "无线", "Wired": "有线", "Mobile broadband": "移动宽带", "Public": "公用", "Private": "专用", "Domain": "域" }
+}

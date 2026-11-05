@@ -1,0 +1,52 @@
+{
+  "id": "windows.eventlogs",
+  "name": "Event Logs",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Key events from the Windows event logs: logons and logoffs (Security, Remote Desktop), account and audit changes, startups, shutdowns, crashes and newly installed services. The .evtx files are copied out and read with the Windows wevtutil tool, so this plugin runs on Windows only.",
+  "entry": "main.py",
+  "requires": ["/Windows/System32/winevt/Logs"],
+  "timeout": 3600,
+  "outputs": [
+    {
+      "id": "evt_logons", "name": "Logon Events", "group": "Event Logs",
+      "columns": [
+        { "key": "time", "title": "Time (UTC)", "width": 160, "kind": "time" },
+        { "key": "eventId", "title": "Event ID", "width": 80 },
+        { "key": "event", "title": "Event", "width": 190 },
+        { "key": "user", "title": "User", "width": 130 },
+        { "key": "domain", "title": "Domain", "width": 130 },
+        { "key": "logonType", "title": "Logon Type", "width": 170 },
+        { "key": "ip", "title": "Source Address", "width": 130, "kind": "mono" },
+        { "key": "workstation", "title": "Workstation", "width": 130 },
+        { "key": "process", "title": "Process", "width": 200 },
+        { "key": "logonId", "title": "Logon ID", "width": 110, "kind": "mono" },
+        { "key": "log", "title": "Log", "width": 120 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "evt_security", "name": "Account and Audit Changes", "group": "Event Logs",
+      "columns": [
+        { "key": "time", "title": "Time (UTC)", "width": 160, "kind": "time" },
+        { "key": "eventId", "title": "Event ID", "width": 80 },
+        { "key": "event", "title": "Event", "width": 240 },
+        { "key": "subject", "title": "Performed By", "width": 140 },
+        { "key": "target", "title": "Target", "width": 200 },
+        { "key": "detail", "title": "Details", "width": 360 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "evt_system", "name": "Startup, Shutdown and Services", "group": "Event Logs",
+      "columns": [
+        { "key": "time", "title": "Time (UTC)", "width": 160, "kind": "time" },
+        { "key": "eventId", "title": "Event ID", "width": 80 },
+        { "key": "event", "title": "Event", "width": 240 },
+        { "key": "provider", "title": "Provider", "width": 200 },
+        { "key": "detail", "title": "Details", "width": 420 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

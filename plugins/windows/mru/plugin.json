@@ -1,0 +1,54 @@
+{
+  "id": "windows.mru",
+  "name": "Recent Activity (Registry MRU)",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Most-recently-used lists in each user's NTUSER.DAT: recently opened documents (RecentDocs), Run dialog commands (RunMRU), paths typed in Explorer and URLs typed in Internet Explorer, and Explorer search terms (WordWheelQuery).",
+  "entry": "main.py",
+  "requires": [],
+  "dependencies": ["regipy"],
+  "outputs": [
+    {
+      "id": "recentdocs", "name": "Recent Documents", "group": "User Activity",
+      "columns": [
+        { "key": "user", "title": "User", "width": 110 },
+        { "key": "order", "title": "MRU Position", "width": 100 },
+        { "key": "name", "title": "Name", "width": 320 },
+        { "key": "extension", "title": "Extension", "width": 90 },
+        { "key": "opened", "title": "Opened (UTC, latest only)", "width": 190, "kind": "time" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "runmru", "name": "Run Dialog (RunMRU)", "group": "User Activity",
+      "columns": [
+        { "key": "user", "title": "User", "width": 110 },
+        { "key": "order", "title": "MRU Position", "width": 100 },
+        { "key": "command", "title": "Command", "width": 420 },
+        { "key": "lastUsed", "title": "Used (UTC, latest only)", "width": 190, "kind": "time" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "typedpaths", "name": "Typed Paths and URLs", "group": "User Activity",
+      "columns": [
+        { "key": "user", "title": "User", "width": 110 },
+        { "key": "kind", "title": "Kind", "width": 150 },
+        { "key": "order", "title": "Position", "width": 80 },
+        { "key": "value", "title": "Typed Value", "width": 460 },
+        { "key": "lastWrite", "title": "Key Last Write (UTC)", "width": 160, "kind": "time" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "searchterms", "name": "Explorer Searches", "group": "User Activity",
+      "columns": [
+        { "key": "user", "title": "User", "width": 110 },
+        { "key": "order", "title": "MRU Position", "width": 100 },
+        { "key": "term", "title": "Search Term", "width": 360 },
+        { "key": "lastSearched", "title": "Searched (UTC, latest only)", "width": 190, "kind": "time" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

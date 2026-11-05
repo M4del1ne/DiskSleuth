@@ -1,0 +1,36 @@
+{
+  "id": "windows.autoruns",
+  "name": "Services and Autostart",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Installed services and drivers (SYSTEM), and programs that start automatically: Run / RunOnce keys of the machine and of each user, Winlogon entries and Startup folders.",
+  "entry": "main.py",
+  "requires": ["/Windows/System32/config/SYSTEM"],
+  "dependencies": ["regipy"],
+  "outputs": [
+    {
+      "id": "services", "name": "Services and Drivers", "group": "System",
+      "columns": [
+        { "key": "name", "title": "Name", "width": 180 },
+        { "key": "displayName", "title": "Display Name", "width": 220 },
+        { "key": "start", "title": "Start Type", "width": 100 },
+        { "key": "type", "title": "Type", "width": 120 },
+        { "key": "imagePath", "title": "Image Path", "width": 360 },
+        { "key": "account", "title": "Account", "width": 160 },
+        { "key": "lastWrite", "title": "Key Last Write (UTC)", "width": 160, "kind": "time" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "runkeys", "name": "Autostart Entries", "group": "System",
+      "columns": [
+        { "key": "location", "title": "Location", "width": 220 },
+        { "key": "scope", "title": "Scope", "width": 110 },
+        { "key": "name", "title": "Name", "width": 180 },
+        { "key": "command", "title": "Command", "width": 420 },
+        { "key": "lastWrite", "title": "Last Write (UTC)", "width": 160, "kind": "time" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

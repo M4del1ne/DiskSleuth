@@ -1,0 +1,26 @@
+{
+  "id": "windows.recyclebin",
+  "name": "Recycle Bin",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Files moved to the Recycle Bin: original path, size and deletion time from $I records (Vista and later) or INFO2 (XP), the owning user, and whether the content ($R file) is still present.",
+  "entry": "main.py",
+  "requires": [],
+  "dependencies": ["regipy"],
+  "outputs": [
+    {
+      "id": "recyclebin", "name": "Recycle Bin", "group": "File System",
+      "columns": [
+        { "key": "deleted", "title": "Deleted (UTC)", "width": 160, "kind": "time" },
+        { "key": "user", "title": "User", "width": 110 },
+        { "key": "originalPath", "title": "Original Path", "width": 420 },
+        { "key": "size", "title": "Size", "width": 90, "kind": "size" },
+        { "key": "contentFile", "title": "Content File", "width": 140, "kind": "mono" },
+        { "key": "contentPresent", "title": "Content Present", "width": 120 },
+        { "key": "emptied", "title": "Record Deleted", "width": 120 },
+        { "key": "sid", "title": "SID", "width": 280, "kind": "mono" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "回收站",
+  "description": "被移入回收站的文件：从 $I 记录（Vista 及以上）或 INFO2（XP）提取原始路径、大小、删除时间和所属用户，并检查内容文件（$R）是否仍在。",
+  "outputs": {
+    "recyclebin": { "name": "回收站", "group": "文件系统", "columns": { "deleted": "删除时间 (UTC)", "user": "用户", "originalPath": "原始路径", "size": "大小", "contentFile": "内容文件", "contentPresent": "内容仍在", "emptied": "记录已被清空", "source": "来源" } }
+  },
+  "values": { "Yes": "是" }
+}

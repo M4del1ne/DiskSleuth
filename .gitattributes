@@ -1,0 +1,5 @@
+# Store text files with LF in the repository.
+* text=auto
+
+# Shell scripts run under MSYS2 bash and break with CRLF.
+*.sh text eol=lf

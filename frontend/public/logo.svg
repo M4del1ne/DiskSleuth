@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6aa6ff"/>
+      <stop offset="1" stop-color="#1f5fbf"/>
+    </linearGradient>
+  </defs>
+  <!-- 六边形：证据 / 完整性 -->
+  <path d="M32 4 56.2 18v28L32 60 7.8 46V18Z" fill="#131a26" stroke="url(#g)" stroke-width="4" stroke-linejoin="round"/>
+  <!-- 透镜 -->
+  <circle cx="29" cy="29" r="12" fill="none" stroke="url(#g)" stroke-width="4.2"/>
+  <path d="M37.6 37.6 46 46" stroke="url(#g)" stroke-width="5" stroke-linecap="round"/>
+  <!-- 微光：被发现的细节 -->
+  <circle cx="29" cy="29" r="3.6" fill="#ffd166"/>
+  <path d="M22.5 24.2a8 8 0 0 1 4.6-3.8" stroke="#ffffff" stroke-opacity=".55" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+</svg>

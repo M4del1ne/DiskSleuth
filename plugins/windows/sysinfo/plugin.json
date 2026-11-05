@@ -1,0 +1,41 @@
+{
+  "id": "windows.sysinfo",
+  "name": "Windows System Info",
+  "version": "1.1.1",
+  "api": 1,
+  "description": "Host name, OS version, install date, time zone, last logged-on user and local accounts from the SYSTEM, SOFTWARE and SAM hives.",
+  "entry": "main.py",
+  "requires": ["/Windows/System32/config/SYSTEM"],
+  "dependencies": ["regipy"],
+  "outputs": [
+    {
+      "id": "sysinfo", "name": "System Information", "group": "System",
+      "columns": [
+        { "key": "item", "title": "Item", "width": 180 },
+        { "key": "value", "title": "Value", "width": 320 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "users", "name": "User Accounts", "group": "System",
+      "columns": [
+        { "key": "name", "title": "User Name", "width": 150 },
+        { "key": "rid", "title": "RID", "width": 70 },
+        { "key": "fullName", "title": "Full Name", "width": 140 },
+        { "key": "logons", "title": "Logons", "width": 80 },
+        { "key": "lastLogin", "title": "Last Logon (UTC)", "width": 170, "kind": "time" },
+        { "key": "pwdSet", "title": "Password Set (UTC)", "width": 170, "kind": "time" },
+        { "key": "disabled", "title": "Disabled", "width": 80 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "timezone", "name": "Time Zone", "group": "System",
+      "columns": [
+        { "key": "item", "title": "Item", "width": 180 },
+        { "key": "value", "title": "Value", "width": 260 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

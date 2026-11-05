@@ -1,0 +1,8 @@
+{
+  "name": "安装软件",
+  "description": "从 SOFTWARE（64 位与 32 位）及各用户 NTUSER.DAT 的 Uninstall 键提取已安装程序。",
+  "outputs": {
+    "software": { "name": "安装软件", "group": "基本信息", "columns": { "name": "名称", "version": "版本", "publisher": "发布者", "installDate": "安装日期", "lastWrite": "键最后写入 (UTC)", "scope": "范围", "location": "安装位置", "uninstall": "卸载命令", "source": "来源" } }
+  },
+  "values": { "All users": "所有用户", "All users (32-bit)": "所有用户 (32 位)" }
+}

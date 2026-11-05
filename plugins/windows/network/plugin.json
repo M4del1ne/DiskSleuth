@@ -1,0 +1,45 @@
+{
+  "id": "windows.network",
+  "name": "Network Configuration",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Network interfaces (IP addresses, DHCP leases, gateways, DNS) from the SYSTEM hive and known networks (Wi-Fi / wired profiles with first and last connection, gateway MAC) from the SOFTWARE hive.",
+  "entry": "main.py",
+  "requires": ["/Windows/System32/config/SYSTEM"],
+  "dependencies": ["regipy"],
+  "outputs": [
+    {
+      "id": "netifaces", "name": "Network Interfaces", "group": "Network",
+      "columns": [
+        { "key": "connection", "title": "Connection", "width": 170 },
+        { "key": "adapter", "title": "Adapter", "width": 220 },
+        { "key": "dhcp", "title": "DHCP", "width": 60 },
+        { "key": "ip", "title": "IP Address", "width": 140, "kind": "mono" },
+        { "key": "mask", "title": "Subnet Mask", "width": 130, "kind": "mono" },
+        { "key": "gateway", "title": "Gateway", "width": 140, "kind": "mono" },
+        { "key": "dns", "title": "DNS Servers", "width": 180, "kind": "mono" },
+        { "key": "dhcpServer", "title": "DHCP Server", "width": 130, "kind": "mono" },
+        { "key": "domain", "title": "Domain", "width": 130 },
+        { "key": "leaseObtained", "title": "Lease Obtained (UTC)", "width": 160, "kind": "time" },
+        { "key": "leaseExpires", "title": "Lease Expires (UTC)", "width": 160, "kind": "time" },
+        { "key": "lastWrite", "title": "Key Last Write (UTC)", "width": 160, "kind": "time" },
+        { "key": "guid", "title": "Interface GUID", "width": 300, "kind": "mono" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "netprofiles", "name": "Known Networks", "group": "Network",
+      "columns": [
+        { "key": "name", "title": "Network Name", "width": 200 },
+        { "key": "type", "title": "Type", "width": 90 },
+        { "key": "category", "title": "Category", "width": 90 },
+        { "key": "firstConnected", "title": "First Connected (local)", "width": 170, "kind": "time" },
+        { "key": "lastConnected", "title": "Last Connected (local)", "width": 170, "kind": "time" },
+        { "key": "gatewayMac", "title": "Gateway MAC", "width": 150, "kind": "mono" },
+        { "key": "dnsSuffix", "title": "DNS Suffix", "width": 140 },
+        { "key": "description", "title": "Description", "width": 180 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

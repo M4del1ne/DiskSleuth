@@ -1,0 +1,7 @@
+{
+  "name": "Prefetch 预读文件",
+  "description": "解析 Windows Prefetch 文件（*.pf，XP 至 Windows 11；Windows 10 起的压缩格式用系统 API 解压）：程序名、运行次数、最近运行时间、所在卷和引用的文件。",
+  "outputs": {
+    "prefetch": { "name": "Prefetch", "group": "程序执行", "columns": { "executable": "程序", "runCount": "运行次数", "lastRun": "最后运行 (UTC)", "previousRuns": "之前的运行时间 (UTC)", "path": "程序路径", "volume": "卷（序列号 / 创建时间）", "filesReferenced": "引用文件数", "hash": "Prefetch 哈希", "version": "格式版本", "pfCreated": "PF 创建时间 (UTC)", "pfModified": "PF 修改时间 (UTC)", "file": "Prefetch 文件" } }
+  }
+}

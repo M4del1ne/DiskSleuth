@@ -1,0 +1,26 @@
+{
+  "id": "windows.software",
+  "name": "Installed Programs",
+  "version": "1.1.1",
+  "api": 1,
+  "description": "Installed programs from the Uninstall keys in SOFTWARE (64- and 32-bit) and in each user's NTUSER.DAT.",
+  "entry": "main.py",
+  "requires": ["/Windows/System32/config/SOFTWARE"],
+  "dependencies": ["regipy"],
+  "outputs": [
+    {
+      "id": "software", "name": "Installed Programs", "group": "System",
+      "columns": [
+        { "key": "name", "title": "Name", "width": 260 },
+        { "key": "version", "title": "Version", "width": 120 },
+        { "key": "publisher", "title": "Publisher", "width": 180 },
+        { "key": "installDate", "title": "Install Date", "width": 100 },
+        { "key": "lastWrite", "title": "Key Last Write (UTC)", "width": 160, "kind": "time" },
+        { "key": "scope", "title": "Scope", "width": 130 },
+        { "key": "location", "title": "Install Location", "width": 260 },
+        { "key": "uninstall", "title": "Uninstall Command", "width": 260 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

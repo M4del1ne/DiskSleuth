@@ -1,0 +1,10 @@
+{
+  "name": "USB 设备",
+  "description": "从 SYSTEM 注册表的 Enum\\USBSTOR 与 Enum\\USB 提取接入过的 USB 存储设备和其他 USB 设备，并结合 MountedDevices 与便携设备记录给出盘符和卷名。",
+  "outputs": {
+    "usbstor": { "name": "USB 存储设备", "group": "设备与外设", "columns": { "friendlyName": "设备名称", "vendor": "厂商", "product": "型号", "revision": "版本", "serial": "序列号", "drive": "盘符", "volumeName": "卷名", "lastWrite": "键最后写入 (UTC)", "source": "来源" } },
+    "usb": { "name": "USB 设备记录", "group": "设备与外设", "columns": { "description": "设备描述", "serial": "实例 / 序列号", "lastWrite": "键最后写入 (UTC)", "source": "来源" } },
+    "mounted": { "name": "挂载设备", "group": "设备与外设", "columns": { "name": "挂载点", "kind": "类型", "detail": "设备 / 磁盘签名", "source": "来源" } }
+  },
+  "values": { "Drive letter": "盘符", "Volume GUID": "卷 GUID", "MBR disk": "MBR 磁盘", "GPT partition": "GPT 分区", "Device": "设备" }
+}

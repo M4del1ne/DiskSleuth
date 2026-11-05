@@ -1,0 +1,10 @@
+{
+  "name": "程序执行（注册表）",
+  "description": "从注册表提取程序执行痕迹：UserAssist（各用户，含运行次数与最后运行时间）、ShimCache / AppCompatCache（SYSTEM）和 BAM（Windows 10 及以上）。",
+  "outputs": {
+    "userassist": { "name": "UserAssist", "group": "程序执行", "columns": { "user": "用户", "program": "程序", "runCount": "运行次数", "lastRun": "最后运行 (UTC)", "focusCount": "焦点次数", "focusTime": "焦点时长", "kind": "类别", "source": "来源" } },
+    "shimcache": { "name": "ShimCache 兼容性缓存", "group": "程序执行", "columns": { "order": "位置", "path": "路径", "modified": "文件修改时间 (UTC)", "executed": "执行标志", "source": "来源" } },
+    "bam": { "name": "BAM 后台活动", "group": "程序执行", "columns": { "user": "用户", "program": "程序", "lastRun": "最后运行 (UTC)", "source": "来源" } }
+  },
+  "values": { "Program": "程序", "Shortcut": "快捷方式", "Yes": "是" }
+}

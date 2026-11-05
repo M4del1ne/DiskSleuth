@@ -1,0 +1,27 @@
+{
+  "name": "事件日志",
+  "description": "从 Windows 事件日志提取关键事件：登录与注销（安全日志、远程桌面）、账户与审计变更、开机、关机、异常关机和新安装的服务。会把 .evtx 复制出来，用 Windows 自带的 wevtutil 读取，因此只能在 Windows 上运行。",
+  "outputs": {
+    "evt_logons": { "name": "登录事件", "group": "系统日志", "columns": { "time": "时间 (UTC)", "eventId": "事件 ID", "event": "事件", "user": "用户", "domain": "域", "logonType": "登录类型", "ip": "来源地址", "workstation": "工作站", "process": "进程", "logonId": "登录 ID", "log": "日志", "source": "来源" } },
+    "evt_security": { "name": "账户与审计变更", "group": "系统日志", "columns": { "time": "时间 (UTC)", "eventId": "事件 ID", "event": "事件", "subject": "操作者", "target": "对象", "detail": "详情", "source": "来源" } },
+    "evt_system": { "name": "开关机与服务", "group": "系统日志", "columns": { "time": "时间 (UTC)", "eventId": "事件 ID", "event": "事件", "provider": "提供程序", "detail": "详情", "source": "来源" } }
+  },
+  "values": {
+    "Logon": "登录成功", "Logon failed": "登录失败", "Logoff": "注销", "User initiated logoff": "用户注销",
+    "Logon with explicit credentials": "使用显式凭据登录", "Session reconnected": "会话重新连接", "Session disconnected": "会话断开",
+    "RDP session logon": "远程桌面会话登录", "RDP shell start": "远程桌面 Shell 启动", "RDP session logoff": "远程桌面会话注销",
+    "RDP session disconnected": "远程桌面会话断开", "RDP session reconnected": "远程桌面会话重新连接",
+    "2 Interactive": "2 交互式", "3 Network": "3 网络", "4 Batch": "4 批处理", "5 Service": "5 服务", "7 Unlock": "7 解锁",
+    "8 Network cleartext": "8 网络明文", "9 New credentials": "9 新凭据", "10 Remote interactive (RDP)": "10 远程交互（RDP）",
+    "11 Cached interactive": "11 缓存交互式",
+    "User account created": "创建用户账户", "User account enabled": "启用用户账户", "Password change attempted": "尝试修改密码",
+    "Password reset": "重置密码", "User account disabled": "禁用用户账户", "User account deleted": "删除用户账户",
+    "Member added to local group": "添加到本地组", "Member removed from local group": "从本地组移除", "User account changed": "用户账户被修改",
+    "User account locked out": "用户账户被锁定", "Security log cleared": "安全日志被清除", "Service installed": "安装服务",
+    "Audit policy changed": "审计策略被修改", "System time changed": "系统时间被修改",
+    "Event log service started (boot)": "事件日志服务启动（开机）", "Event log service stopped (shutdown)": "事件日志服务停止（关机）",
+    "Unexpected shutdown": "异常关机", "OS version at boot": "开机时的系统版本", "System uptime": "系统运行时长",
+    "Shutdown or restart initiated": "发起关机或重启", "Log cleared": "日志被清除", "Operating system started": "操作系统启动",
+    "Operating system shutting down": "操作系统关闭", "Rebooted without a clean shutdown": "未正常关机即重启"
+  }
+}

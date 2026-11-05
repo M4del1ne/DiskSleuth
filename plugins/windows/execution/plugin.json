@@ -1,0 +1,45 @@
+{
+  "id": "windows.execution",
+  "name": "Program Execution (Registry)",
+  "version": "1.0.1",
+  "api": 1,
+  "description": "Evidence of program execution from the registry: UserAssist (per user, run count and last run), ShimCache / AppCompatCache (SYSTEM) and BAM (Windows 10+).",
+  "entry": "main.py",
+  "requires": ["/Windows/System32/config/SYSTEM"],
+  "dependencies": ["regipy"],
+  "outputs": [
+    {
+      "id": "userassist", "name": "UserAssist", "group": "Program Execution",
+      "columns": [
+        { "key": "user", "title": "User", "width": 110 },
+        { "key": "program", "title": "Program", "width": 420 },
+        { "key": "runCount", "title": "Run Count", "width": 90 },
+        { "key": "lastRun", "title": "Last Run (UTC)", "width": 160, "kind": "time" },
+        { "key": "focusCount", "title": "Focus Count", "width": 90 },
+        { "key": "focusTime", "title": "Focus Time", "width": 100 },
+        { "key": "kind", "title": "Kind", "width": 100 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "shimcache", "name": "ShimCache (AppCompatCache)", "group": "Program Execution",
+      "columns": [
+        { "key": "order", "title": "Position", "width": 80 },
+        { "key": "path", "title": "Path", "width": 480 },
+        { "key": "modified", "title": "File Modified (UTC)", "width": 160, "kind": "time" },
+        { "key": "executed", "title": "Executed Flag", "width": 110 },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    },
+    {
+      "id": "bam", "name": "BAM (Background Activity Moderator)", "group": "Program Execution",
+      "columns": [
+        { "key": "user", "title": "User", "width": 140 },
+        { "key": "program", "title": "Program", "width": 460 },
+        { "key": "lastRun", "title": "Last Run (UTC)", "width": 160, "kind": "time" },
+        { "key": "sid", "title": "SID", "width": 280, "kind": "mono" },
+        { "key": "source", "title": "Source", "kind": "source" }
+      ]
+    }
+  ]
+}

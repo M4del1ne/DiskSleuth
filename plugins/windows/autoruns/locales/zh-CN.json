@@ -1,0 +1,14 @@
+{
+  "name": "服务与自启动",
+  "description": "从 SYSTEM 提取已安装的服务和驱动；并列出开机自动运行的程序：本机与各用户的 Run / RunOnce 键、Winlogon 项和“启动”文件夹。",
+  "outputs": {
+    "services": { "name": "服务与驱动", "group": "基本信息", "columns": { "name": "名称", "displayName": "显示名称", "start": "启动类型", "type": "类型", "imagePath": "程序路径", "account": "运行账户", "lastWrite": "键最后写入 (UTC)", "source": "来源" } },
+    "runkeys": { "name": "自启动项", "group": "基本信息", "columns": { "location": "位置", "scope": "范围", "name": "名称", "command": "命令", "lastWrite": "最后写入 (UTC)", "source": "来源" } }
+  },
+  "values": {
+    "Boot": "引导", "System": "系统", "Automatic": "自动", "Manual": "手动", "Disabled": "禁用",
+    "Kernel driver": "内核驱动", "File system driver": "文件系统驱动", "Service (own process)": "服务（独立进程）",
+    "Service (shared process)": "服务（共享进程）", "Service": "服务", "All users": "所有用户",
+    "Startup folder": "启动文件夹", "Startup folder (all users)": "启动文件夹（所有用户）"
+  }
+}

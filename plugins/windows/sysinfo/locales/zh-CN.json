@@ -1,0 +1,17 @@
+{
+  "name": "Windows 系统信息",
+  "description": "从 SYSTEM / SOFTWARE / SAM 注册表提取主机名、系统版本、安装时间、时区、最后登录用户和本地账户。",
+  "outputs": {
+    "sysinfo": { "name": "系统信息", "group": "基本信息", "columns": { "item": "项目", "value": "值", "source": "来源" } },
+    "users": { "name": "用户账户", "group": "基本信息", "columns": { "name": "用户名", "fullName": "全名", "logons": "登录次数", "lastLogin": "最后登录 (UTC)", "pwdSet": "密码设置时间 (UTC)", "disabled": "已禁用", "source": "来源" } },
+    "timezone": { "name": "时区设置", "group": "基本信息", "columns": { "item": "项目", "value": "值", "source": "来源" } }
+  },
+  "values": {
+    "Computer name": "主机名", "Host name (TCP/IP)": "主机名 (TCP/IP)", "Domain (TCP/IP)": "域 (TCP/IP)",
+    "Operating system": "操作系统", "Service pack": "补丁级别", "Build": "内部版本", "Edition": "版本类型",
+    "Registered owner": "注册所有者", "Registered organization": "注册组织", "Install date": "安装时间",
+    "Last logged-on user": "最后登录用户", "Last logged-on user (SAM)": "最后登录用户 (SAM)",
+    "Last shutdown": "最后关机时间", "System root": "系统目录", "Processor architecture": "处理器架构",
+    "UTC offset": "UTC 偏移", "Daylight saving disabled": "已禁用夏令时", "Yes": "是"
+  }
+}

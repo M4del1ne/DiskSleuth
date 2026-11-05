@@ -1,0 +1,45 @@
+# local toolchain and third-party dependencies (rebuilt by the scripts in scripts/, not committed)
+/toolchain/
+/downloads/
+/third_party/src/
+/deps/
+/tools/
+
+# build output
+/build/
+/dist/
+*.exe
+*.dll
+*.a
+*.lib
+*.o
+
+# front end
+node_modules/
+out/
+/frontend/dist/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# case data and test images (large and possibly sensitive)
+/cases/
+/testdata/images/
+/windows检材/
+/内存取证检材/
+*.mem
+*.E01
+*.e01
+*.Ex01
+*.dd
+*.raw
+*.img
+*.001
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

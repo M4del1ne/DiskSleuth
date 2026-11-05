@@ -1,0 +1,8 @@
+{
+  "name": "快捷方式 (LNK)",
+  "description": "解析全盘所有 .lnk 文件（含已删除）：目标路径、参数、目标文件的时间与大小、所在卷、生成快捷方式的计算机名。需要先建立文件索引。",
+  "outputs": {
+    "lnk": { "name": "快捷方式 (LNK)", "group": "用户痕迹", "columns": { "name": "快捷方式", "target": "目标路径", "args": "参数", "targetModified": "目标修改时间 (UTC)", "targetCreated": "目标创建时间 (UTC)", "targetAccessed": "目标访问时间 (UTC)", "targetSize": "目标大小", "volume": "卷 (类型 / 序列号 / 卷标)", "machine": "计算机名", "lnkModified": "LNK 修改时间 (UTC)", "deleted": "已删除", "path": "LNK 位置" } }
+  },
+  "values": { "Yes": "是" }
+}

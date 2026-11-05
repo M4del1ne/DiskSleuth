@@ -1,0 +1,12 @@
+{
+  "name": "浏览器记录",
+  "description": "提取各用户 Chromium 内核浏览器（Chrome、Edge、Brave、Opera、360、QQ 浏览器等）和 Firefox 的浏览记录与下载记录。读取前会连同 -wal / -journal 文件一起复制数据库。",
+  "outputs": {
+    "browser_history": { "name": "浏览记录", "group": "浏览器", "columns": { "time": "访问时间 (UTC)", "browser": "浏览器", "user": "用户", "title": "标题", "url": "网址", "visitCount": "访问次数", "transition": "访问方式", "profile": "配置文件", "source": "来源" } },
+    "browser_downloads": { "name": "下载记录", "group": "浏览器", "columns": { "start": "开始时间 (UTC)", "end": "完成时间 (UTC)", "browser": "浏览器", "user": "用户", "target": "保存位置", "url": "网址", "size": "大小", "state": "状态", "source": "来源" } }
+  },
+  "values": {
+    "Link": "点击链接", "Typed": "地址栏输入", "Bookmark": "书签", "Subframe": "子框架", "Generated": "地址栏建议", "Start page": "启动页",
+    "Form submit": "提交表单", "Reload": "刷新", "Keyword": "搜索关键字", "Complete": "已完成", "Cancelled": "已取消", "Interrupted": "已中断", "In progress": "进行中"
+  }
+}
